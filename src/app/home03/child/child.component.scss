@@ -1,0 +1,114 @@
+.top-list {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 20px 0;
+    padding: 20px 0;
+    border-bottom: 2px solid #9b9393;
+
+    span {
+        width: 14%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: monospace;
+        font-weight: bold;
+        font-size: 25px;
+    }
+}
+
+.list-tasks {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin: 10px 0;
+    padding: 10px 0;
+    border: 2px solid #008000;
+    color: #008000;
+    border-radius: 10px;
+    box-shadow: 0 0 15px #9b9393;
+
+    .line {
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+
+        span {
+            width: 14%;
+            text-align: center;
+
+            .edit {
+                background-color: #dddd6a;
+                color: #9b9393;
+                padding: 10px 30px;
+                font-family: sans-serif;
+                border: none;
+                border-radius: 7px;
+                cursor: pointer;
+                font-weight: bold;
+            }
+
+            .delete {
+                background-color: #ff0000;
+                color: #fff;
+                padding: 10px 30px;
+                font-family: sans-serif;
+                border: none;
+                border-radius: 7px;
+                cursor: pointer;
+                font-weight: bold;
+            }
+        }
+    }
+}
+.not-work {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin: 10px 0;
+    padding: 10px 0;
+    border: 2px solid #ff0000;
+    color: #64bd64;
+    border-radius: 10px;
+    box-shadow: 0 0 15px #ff0000;
+    .line {
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+
+        span {
+            width: 14%;
+            text-align: center;
+            color: #ff0000;
+
+            .edit {
+                background-color: #ffff00;
+                padding: 10px 30px;
+                font-family: sans-serif;
+                border: none;
+                color: #000000;
+                border-radius: 7px;
+                cursor: pointer;
+                font-weight: bold;
+            }
+
+            .delete {
+                background-color: #c57171;
+                color: #fff;
+                padding: 10px 30px;
+                font-family: sans-serif;
+                border: none;
+                border-radius: 7px;
+                cursor: pointer;
+                font-weight: bold;
+            }
+        }
+    }
+}

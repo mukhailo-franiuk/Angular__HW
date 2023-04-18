@@ -1,0 +1,15 @@
+<div class="contain">
+<header class="contain__header">
+    <h2>Plan your day!</h2>
+    <h3>User:Ivan Ivanov , count of tastks {{ tasksList.length }}</h3>
+    <div class="add-plan">
+
+    <input type="text" [(ngModel)]="inputValue"> <button (click)="add()">Add {{ subInp }}</button>
+    </div>
+</header>
+<app-child [newArray]="tasksList" (redaktId)="showId($event)"></app-child>
+
+<div class="save-block" [class]="style">
+    <input type="text" [(ngModel)]="subInp"> <button (click)="saveChanged()">save</button>
+</div>
+</div>
