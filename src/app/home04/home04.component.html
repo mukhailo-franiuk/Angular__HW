@@ -1,0 +1,58 @@
+<div [className]="class01">
+    <div class="save-block">
+        <h3>First name :</h3>
+        <input type="text" [(ngModel)]="fName">
+        <h3>Last name :</h3>
+        <input type="text" [(ngModel)]="lName">
+        <h3>Number :</h3>
+        <input type="text" [(ngModel)]="number">
+        <button (click)="saveNewNumber()" *ngIf="!editStatus">save</button>
+        <button (click)="updateNunber()" *ngIf="editStatus">save</button>
+    </div>
+</div>
+<div class="contain">
+    <div class="contain__top">
+        <h1>My phone book</h1>
+    </div>
+    <div class="contain__options">
+        <input type="text" [style]="showInput01">
+        <input type="text" [style]="showInput02" [(ngModel)]="searshStrF">
+        <input type="text" [style]="showInput03" [(ngModel)]="searshStrL">
+        <input type="text" [style]="showInput04" [(ngModel)]="searshStrN"> <button (click)="showAddNumber()">Add
+            number</button>
+
+    </div>
+    <div class="contain__list-tags">
+        <div>
+            <button (click)="showSort('up-first-name')" [style]="dStatus">{{ firstName }}</button>
+            <button (click)="sortListDown('down-first-name')" [style]="statusButtonDown">{{ firstName |
+                arrowUp}}</button>
+            <button [style]="statusButtonUp" (click)="sortListUp('up-first-name')">{{ firstName |arrowDown}}</button>
+        </div>
+        <div>
+            <button (click)="showSortLast('up-last-name')" [style]="dStatusL">{{ lastName }}</button>
+            <button (click)="sortListDownLast('down-last-name')" [style]="statusButtonDownL">{{ lastName |
+                arrowUp}}</button>
+            <button [style]="statusButtonUpL" (click)="sortListUpLast('up-last-name')">{{ lastName |arrowDown}}</button>
+        </div>
+        <div>
+            <button (click)="showSortNumber('up-number')" [style]="dStatusN">{{ numbers }}</button>
+            <button (click)="sortListDownNumber('down-number')" [style]="statusButtonDownN">{{ numbers |
+                arrowUp}}</button>
+            <button [style]="statusButtonUpN" (click)="sortListUpNumber('up-number')">{{ numbers |arrowDown}}</button>
+        </div>
+        <span class="tags-edit">Edit</span>
+        <span class="tags-delete">Delete</span>
+    </div>
+
+    <div class="contain__list-numbers">
+        <div class="line"
+            *ngFor="let item of phoneBook |sort:strSort |sortL:strSortL |sortN:strSortN |searshF:searshStrF |searshL:searshStrL |searshN:searshStrN;let i = index">
+            <span>{{ item.firstName }} </span>
+            <span>{{ item.lastName }}</span>
+            <span>{{ item.number }}</span>
+            <span><button class="edit" (click)="editNumber(i)">Edit</button></span>
+            <span><button class="delete" (click)="deleteNumber(i)">Delete</button></span>
+        </div>
+    </div>
+</div>

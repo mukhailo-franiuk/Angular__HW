@@ -1,0 +1,248 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.contain {
+    width: 80%;
+    margin: 10px auto;
+
+    &__top {
+        width: 100%;
+
+        h1 {
+            text-align: center;
+            font-family: sans-serif;
+            font-size: 50px;
+            font-weight: 800;
+        }
+    }
+
+    &__options {
+        width: 100%;
+        margin: 20px 0;
+        padding: 10px;
+        display: flex;
+
+        input {
+            width: 75%;
+            font-size: 30px;
+            padding: 5px 0 5px 10px;
+        }
+
+        button {
+            position: relative;
+            background-color: green;
+            padding: 15px 20px;
+            top: 0px;
+            margin-left: 20px;
+            border: none;
+            cursor: pointer;
+            color: #fff;
+            font-family: sans-serif;
+            font-weight: bold;
+            border-radius: 6px;
+        }
+    }
+
+    &__list-tags {
+        width: 100%;
+        margin: 20px 0;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        div {
+            width: 20%;
+            display: flex;
+            justify-content:center;
+            button {
+                text-align: center;
+                font-weight: bold;
+                font-family: sans-serif;
+                font-size: 23px;
+                cursor: pointer;
+                background: none;
+                border: none;
+            }
+        }
+
+        span {
+            width: 20%;
+            text-align: center;
+            font-weight: bold;
+            font-family: sans-serif;
+            font-size: 23px;
+            cursor: pointer;
+        }
+
+        .tags-edit,
+        .tags-delete {
+            cursor: help;
+        }
+    }
+
+    &__list-numbers {
+        width: 100%;
+        margin: 20px 0;
+        padding: 20px 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .line {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: 10px 0;
+            padding: 20px 0;
+            border: 1px solid #4b4848;
+            border-radius: 50px 0 50px 0;
+            span {
+                width: 20%;
+                text-align: center;
+                font-family: sans-serif;
+                .edit {
+                    background-color: #ffff00;
+                    color: #000;
+                    font-family: sans-serif;
+                    font-weight: bold;
+                    padding: 10px 30px;
+                    border: none;
+                    border-radius: 6px;
+                    cursor: pointer;
+                }
+                .delete {
+                    background-color: #ff0000;
+                    color: #fff;
+                    font-family: sans-serif;
+                    font-weight: bold;
+                    padding: 10px 30px;
+                    border: none;
+                    border-radius: 6px;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+// Save container styles
+.save-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    width: 0%;
+    height: 0vh;
+    background-color: rgba(0, 0, 0,.7);
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transition: all ease .5s;
+    .save-block {
+        width: 30%;
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        border-radius: 10px;
+        position: relative;
+        padding: 30px 0 70px 0;
+        h3 {
+            font-family: sans-serif;
+            font-weight: bold;
+            padding: 20px 0 20px 20px;
+        }
+        input {
+            font-size: 20px;
+            margin: 0 20px;
+            padding: 5px 0 5px 10px;
+            outline: none;
+            border: 1px solid #4b4848;
+            border-radius: 4px;
+            &:focus {
+                box-shadow: 0 0 15px #4b4848;
+                border: transparent;
+            }
+        }
+        button {
+            position: absolute;
+            right: 20px;
+            bottom: 20px;
+            padding: 10px 20px;
+            background-color: #008000;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            cursor: pointer;
+            &:focus {
+                box-shadow: 0 0 15px #008000;
+            }
+        }
+    }
+}
+.save-container-action {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0,.7);
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transition: all ease .5s;
+    .save-block {
+        width: 30%;
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        border-radius: 10px;
+        position: relative;
+        padding: 30px 0 70px 0;
+        h3 {
+            font-family: sans-serif;
+            font-weight: bold;
+            padding: 20px 0 20px 20px;
+        }
+        input {
+            font-size: 20px;
+            margin: 0 20px;
+            padding: 5px 0 5px 10px;
+            outline: none;
+            border: 1px solid #4b4848;
+            border-radius: 4px;
+            &:focus {
+                box-shadow: 0 0 15px #4b4848;
+                border: transparent;
+            }
+        }
+        button {
+            position: absolute;
+            right: 20px;
+            bottom: 20px;
+            padding: 10px 20px;
+            background-color: #008000;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            cursor: pointer;
+            &:focus {
+                box-shadow: 0 0 15px #008000;
+            }
+        }
+    }
+}
