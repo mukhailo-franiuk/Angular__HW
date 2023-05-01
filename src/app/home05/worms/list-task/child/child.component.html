@@ -1,0 +1,19 @@
+<div class="top-list">
+    <span>#</span>
+    <span>Task</span>
+    <span>Check</span>
+    <span>Done / in progress</span>
+    <span>Edit</span>
+    <span>Delete</span>
+</div>
+
+<div *ngFor="let item of newArray; let i = index"  [class]="item.class">
+     <div class="line">
+       <span [style]="'font-weight:bold'">{{ i + 1 }} </span>
+        <span>{{ item.task }}</span>
+        <span><input type="checkbox" (click)="checkOnOff(i)" [checked]="item.check"></span>
+        <span>{{ item.status }}</span>
+        <span><button class="edit" [disabled]="item.disabledEdit" (click)="editer(i)">Edit</button></span>
+        <span><button class="delete" [disabled]="item.disabledDel" (click)="deleteTask(i)">Delete</button></span>
+    </div> 
+</div>

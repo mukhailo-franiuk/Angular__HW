@@ -1,0 +1,25 @@
+<nav class="nav">
+    <div class="nav__tasks-last">
+        last works >>>
+    </div>
+    <div class="nav__naigation-task">
+        <a [routerLink]="[ '/worms/cenzor' ]" routerLinkActive="active-01">Cenzor</a>
+        <a [routerLink]="[ '/worms/tasks' ]" routerLinkActive="active-02">List tasks</a>
+        <a [routerLink]="[ '/worms/user-list' ]" routerLinkActive="active-03"> Task list</a>
+    </div>
+    <div class="nav__back-home">
+        <a [routerLink]="[ '/' ]" routerLinkActive="active"> back to Home >>></a>
+    </div>
+</nav>
+<div class="contain">
+    <div class="header">
+        <h1>Bad worms : <span class="bad-worms" *ngFor="let item of arrayBadWords">{{ item + ' ' }}</span></h1>
+    </div>
+    <div class="form">
+        <input type="text" [(ngModel)]="badWords"  id="b-worms">
+        <input type="button" value="Add" id="add" (click)="addBadWords()">
+        <input type="button" value="Reset" (click)="resetBadWords()" id="reset">
+        <p><textarea [(ngModel)]="textarea" id="textarea" cols="30" rows="10"></textarea></p>
+        <p><input type="button" value="Cenzor" id="cenz" (click)="cenzor()"></p>
+    </div>
+</div>

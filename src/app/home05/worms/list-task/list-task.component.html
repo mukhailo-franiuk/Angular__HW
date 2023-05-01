@@ -1,0 +1,28 @@
+<nav class="nav">
+    <div class="nav__tasks-last">
+        last works >>>
+    </div>
+    <div class="nav__naigation-task">
+        <a [routerLink]="[ '/worms/cenzor' ]" routerLinkActive="active-01">Cenzor</a>
+        <a [routerLink]="[ '/worms/tasks' ]" routerLinkActive="active-02">List tasks</a>
+        <a [routerLink]="[ '/worms/user-list' ]" routerLinkActive="active-03"> User list</a>
+    </div>
+    <div class="nav__back-home">
+        <a [routerLink]="[ '/' ]" routerLinkActive="active"> back to Home >>></a>
+    </div>
+</nav>
+<div class="contain">
+    <header class="contain__header">
+        <h2>Plan your day!</h2>
+        <h3>User:Ivan Ivanov , count of tastks {{ tasksList.length }}</h3>
+        <div class="add-plan">
+    
+        <input type="text" [(ngModel)]="inputValue"> <button (click)="add()">Add {{ subInp }}</button>
+        </div>
+    </header>
+    <app-child [newArray]="tasksList" (redaktId)="showId($event)"></app-child>
+    
+    <div class="save-block" [class]="style">
+        <input type="text" [(ngModel)]="subInp"> <button (click)="saveChanged()">save</button>
+    </div>
+    </div>
